@@ -17,7 +17,7 @@
   <properties>
     <vertx.version>3.5.0</vertx.version>
     <vertx-maven-plugin.version>1.0.13</vertx-maven-plugin.version>
-    <vertx.verticle>io.openshift.booster.HttpApplication</vertx.verticle>
+    <vertx.verticle>io.openshift.booster.gateway.service.GatewayServiceVerticle</vertx.verticle>
   </properties>
 
   <dependencyManagement>
@@ -41,12 +41,21 @@
       <groupId>io.vertx</groupId>
       <artifactId>vertx-web</artifactId>
     </dependency>
-
+    
+    <dependency>
+      <groupId>io.vertx</groupId>
+      <artifactId>vertx-circuit-breaker</artifactId>
+    </dependency>
+    
+    <dependency>
+      <groupId>io.vertx</groupId>
+      <artifactId>vertx-rx-java</artifactId>
+    </dependency>
+    
     <!-- Testing -->
     <dependency>
       <groupId>io.vertx</groupId>
       <artifactId>vertx-web-client</artifactId>
-      <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>io.vertx</groupId>
